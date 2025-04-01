@@ -25,7 +25,6 @@ WORKDIR /app
 
 # Copy the built JAR from the builder stage
 COPY --from=builder /app/target/tasksProject-0.0.1-SNAPSHOT.jar ./tasksProject-0.0.1-SNAPSHOT.jar
-COPY atom-firebase-credentials.json ./atom-firebase-credentials.json
 
 # Specify the command to run on container start
 CMD ["java", "-jar", "tasksProject-0.0.1-SNAPSHOT.jar"]
