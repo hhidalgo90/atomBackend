@@ -39,3 +39,47 @@ Para proteger las credenciales de Firebase, las variables de entorno se configur
 ### URL Api Alojada en Cloud Run
 
 - **https://atombackendservice-44850752985.us-central1.run.app
+
+## Instalación y Configuración
+
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/tu_usuario/atom-backend-image.git
+
+2. **Configurar Firebase:**:
+
+-   Ir a Firebase Console.
+
+-   Crear un nuevo proyecto o usa uno existente.
+
+-   Habilitar Firestore y genera un archivo atom-firebase-credentials.json (como servicio de cuentas de Firebase).
+
+-   Colocar el archivo atom-firebase-credentials.json en la raíz del proyecto.
+
+3. **Configurar las variables de entorno:**:
+
+-   Configura la variable de entorno FIREBASE_CREDENTIALS para que apunte a tu archivo atom-firebase-credentials.json.
+
+En sistemas basados en UNIX (Linux, macOS):
+
+   ```bash
+export FIREBASE_CREDENTIALS=/path/to/atom-firebase-credentials.json
+```
+En Windows (cmd):
+
+   ```bash
+set FIREBASE_CREDENTIALS=C:\path\to\atom-firebase-credentials.json
+```
+
+4. **Construir el proyecto: Utiliza Maven para compilar y construir el proyecto:**:
+
+   ```cmd
+    ./mvnw clean install
+
+5. **Ejecutar la aplicación: Para iniciar la aplicación localmente, usa:**:
+
+```bash
+./mvnw spring-boot:run
+```
+
+6. **Para subir cambios basta con hacer pull request a master, Cloud Build despliega automaticamente**:
