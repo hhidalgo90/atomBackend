@@ -22,14 +22,14 @@ public class UserController {
 
     @GetMapping("/{email}")
     public boolean getUser(@PathVariable String email) throws ExecutionException, InterruptedException {
-        return userService.existUser(email);
+        return userService.userExists(email);
     }
 
     @PostMapping(produces = "application/json")
     public ResponseEntity<Map<String, String>> addUser(@RequestParam("email") String email) {
         Map<String, String> respuesta = new HashMap<>();
         try {
-            if (userService.existUser(email)) {
+            if (userService.userExists(email)) {
                 respuesta.put("mensaje", "El usuario ya existe");
                 return ResponseEntity.badRequest().body(respuesta);
             }
