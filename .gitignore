@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### SECRET ###
-./atom-firebase-credentials.json
+atom-firebase-credentials.json
