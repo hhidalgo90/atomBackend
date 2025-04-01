@@ -26,8 +26,6 @@ public class FirebaseConfig {
     @Bean
     public Firestore firestore() throws IOException {
         if (FirebaseApp.getApps().isEmpty()) { // 🔹 Verifica si ya está inicializado
-            //FileInputStream serviceAccount = new FileInputStream("./atom-firebase-credentials.json");
-
             String firebaseConfig = System.getenv("FIREBASE_CREDENTIALS");
 
             if (firebaseConfig == null) {
